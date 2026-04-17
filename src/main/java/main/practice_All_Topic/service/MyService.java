@@ -3,6 +3,7 @@ package main.practice_All_Topic.service;
 import main.practice_All_Topic.entity.User;
 import main.practice_All_Topic.repo.MyRepoInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +16,13 @@ public class MyService {
 
 
     public User saveUser(User user) {
+        User curr = new User();
 
+        curr.setEmail(user.getEmail());
+        curr.setName(user.getName());
+        curr.setId(user.getId());
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        curr.setPassword(passwordEncoder.encode(user.getPassword()));
        myRepo.save(user);
         return user;
     }

@@ -40,4 +40,6 @@ public class MyController {
     public void deleteUser(@PathVariable("id") Long id){
         myService.deleteUser(id);
     }
+
+
 }
