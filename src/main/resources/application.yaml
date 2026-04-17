@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: practice_All_Topic
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/practice
+    user-name: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+  server:
+    port: 6767
